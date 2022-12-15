@@ -20,13 +20,14 @@ jobs:
   example_matrix:
     strategy:
       matrix:
-        os: [ windows-latest, macos-latest, ubuntu-latest ]
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
         jdk: [ 11, 8, 17 ]
     runs-on: ${{matrix.os}}
     env:
-      JDK_VERSION: ${{ matrix.jdk}}
+      JDK_VERSION: ${{matrix.jdk}}
 
     steps:
+      - name: Current step
       - uses: actions/checkout@v3
 
       - name: Build with Gradle
